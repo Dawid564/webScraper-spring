@@ -1,4 +1,4 @@
-package com.webcraper.console;
+package com.webscraper.console;
 
 public class ConsoleStart {
 }
