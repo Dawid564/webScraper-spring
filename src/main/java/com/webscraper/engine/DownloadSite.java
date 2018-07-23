@@ -16,6 +16,8 @@ public class DownloadSite {
         try {
             website = new URL(link);
             ReadableByteChannel rbc = Channels.newChannel(website.openStream());
+
+            System.out.println();
             FileOutputStream fos = new FileOutputStream("info.html");
             fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
         } catch (Exception e) {

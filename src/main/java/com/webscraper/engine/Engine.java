@@ -6,7 +6,9 @@ public class Engine {
     private String searchEngine;
 
     public Engine(String[] args){
-        System.out.println(args[0]);
+        String link = args[0];
+        DownloadSite downloadSite = new DownloadSite(link);
+
     }
 
 }
