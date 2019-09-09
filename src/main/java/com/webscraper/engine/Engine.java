@@ -7,22 +7,24 @@ import com.webscraper.searchEngine.SearchFactory;
 public class Engine {
 
     private String searchEngine;
+    private FileManager fileManager = null;
+
 
     public Engine(String[] args){
         String link = args[0];
-        initSiteDownload(link);
         saveLink(link);
+        initSiteDownload(link);
     }
 
     //TODO save website adress into file
     private void saveLink(String link){
-        FileManager fileManager = new FileManager();
+        this.fileManager = new FileManager();
 
     }
 
     private void initSiteDownload(String link){
         DownloadSite downloadSite = new DownloadSite(link);
-
+        parseSite(downloadSite.getWebsite());
     }
 
     private void parseSite(String data){
